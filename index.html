@@ -1,5 +1,4 @@
 <!doctype html>
-{% load static %}
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -403,10 +402,10 @@
           <div class="col-sm-3 social">
             <div class="bg-white shadow-sm p-3 rounded-3 text-center card-custom h-100">
               <div class="img-hover-zoom mb-3">
-                <img src="{% if x.picture %}/{{x.picture}}{% else %}https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=500&q=80{% endif %}" class="img-fluid rounded-3" style="height:220px; width:100%; object-fit:cover;" alt="Executive Chef"/>
+                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded-3" style="height:220px; width:100%; object-fit:cover;" alt="Executive Chef"/>
               </div>
-              <b class="fs-5 d-block text-dark mb-1">{% if x.name %}{{x.name}}{% else %}Chef Rajesh Sharma{% endif %}</b>
-              <p class="text-muted small mb-2">{% if x.about_chef %}{{x.about_chef}}{% else %}Head Executive Chef with 12+ years specializing in modern Indian-Italian fusion cuisine.{% endif %}</p>
+              <b class="fs-5 d-block text-dark mb-1">Chef Rajesh Sharma</b>
+              <p class="text-muted small mb-2">Head Executive Chef with 12+ years specializing in modern Indian-Italian fusion cuisine.</p>
               <div class="pt-2">
                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
                 <a href="#"><i class="fa-brands fa-youtube"></i></a>
