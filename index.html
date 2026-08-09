@@ -307,17 +307,17 @@
               <li class="list-group-item bg-color1 text-dark fw-bold" aria-current="true">
                 <i class="fa-solid fa-utensils me-2"></i> Our Categories
               </li>
-              {% if a %}
+          
               <li class="list-group-item d-flex align-items-center">
-                <img src="/{{a.category_picture}}" height="40" class="me-2 rounded" alt="Category"/>
-                <a class="text-decoration-none text-dark fw-semibold" href="/user/menu?msg={{a.id}}">{{a.category_name}}</a>
+              <a href="https://ibb.co/DDV2NNMt"><img src="https://i.ibb.co/DDV2NNMt/indian-food.jpg" alt="FOOD CATEGORY" border="0"></a>
+                <a class="text-decoration-none text-dark fw-semibold" href="/user/menu?msg="></a>
               </li>
-              {% else %}
+            
               <li class="list-group-item"><a href="#" class="text-decoration-none text-dark fw-semibold">North Indian Fusion</a></li>
               <li class="list-group-item"><a href="#" class="text-decoration-none text-dark fw-semibold">Chinese & Italian</a></li>
               <li class="list-group-item"><a href="#" class="text-decoration-none text-dark fw-semibold">Sizzlers & Starters</a></li>
               <li class="list-group-item"><a href="#" class="text-decoration-none text-dark fw-semibold">Desserts & Drinks</a></li>
-              {% endif %}
+              
               <li class="list-group-item bg-light">
                 <a href="/user/menu/" class="text-decoration-none text-dark fw-bold">View All Products &rarr;</a>
               </li>
@@ -340,7 +340,7 @@
                       Fresh garden greens, grilled paneer, exotic herbs, and special spicy fusion dip.
                     </p>
                     <div class="d-flex justify-content-between align-items-center mt-3">
-                      <span class="badge bg-color1 text-dark fs-6 px-2 py-1"><i class="fa-solid fa-indian-rupee-sign"></i> {% if x.price %}{{x.price}}{% else %}299{% endif %}/-</span>
+                      <span class="badge bg-color1 text-dark fs-6 px-2 py-1"><i class="fa-solid fa-indian-rupee-sign"></i> 299/-</span>
                       <a href="/user/booking/" class="btn btn-sm btn-outline-dark fw-semibold">Order Now</a>
                     </div>
                   </div>
