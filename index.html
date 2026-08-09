@@ -1,0 +1,782 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GYFood Fusion | Techpile</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    .heading {
+      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .bg-color1 {
+      background: #ffbe00;
+    }
+
+    .text-color1 {
+      color: #ffbe00;
+    }
+
+    .bg-color2 {
+      background: #fffcf4;
+    }
+
+    .text-color2 {
+      color: #5c1d89;
+    }
+
+    .social .fa-brands {
+      color: #198754;
+      background: #ffedf0;
+      height: 36px;
+      width: 36px;
+      text-align: center;
+      line-height: 36px;
+      font-size: 18px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin: 0 2px;
+    }
+
+    .social .fa-brands:hover {
+      background: #ffbe00;
+      color: #ffffff;
+      transform: translateY(-3px) rotate(360deg);
+    }
+
+    #menu {
+      background: transparent !important;
+    }
+
+    #menu .nav-link {
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    #menu .nav-link:hover, 
+    #menu .nav-link.active {
+      color: #ffbe00 !important;
+    }
+
+    .form-control {
+      height: 45px;
+      border-radius: 6px !important;
+      margin-bottom: 12px;
+      border: 1px solid #ced4da;
+    }
+
+    .form-control:focus {
+      border-color: #ffbe00;
+      box-shadow: 0 0 0 0.25rem rgba(255, 190, 0, 0.25);
+    }
+
+    .txta {
+      height: 100px;
+      resize: none;
+    }
+
+    .btn1 {
+      display: inline-block;
+      height: 45px;
+      padding: 0 24px;
+      background: #ffbe00;
+      color: #212529;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      line-height: 45px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn1:hover {
+      background: #e0a800;
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 190, 0, 0.3);
+    }
+
+    .services .fa-solid {
+      color: #ffbe00;
+      font-size: 24px;
+    }
+
+    .contact .fa-solid {
+      height: 50px;
+      width: 50px;
+      border-radius: 8px;
+      color: #ffbe00;
+      background: #ffedf0;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .marker-orange::marker {
+      color: orangered;
+    }
+
+    .card-custom {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-custom:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.12) !important;
+    }
+
+    .img-hover-zoom {
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .img-hover-zoom img {
+      transition: transform 0.5s ease;
+    }
+
+    .img-hover-zoom:hover img {
+      transform: scale(1.08);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container-fluid p-0">
+    <!-- Top Bar -->
+    <div class="row text-center bg-dark text-light py-2 fs-6 mx-0 align-items-center">
+      <div class="col-sm-3 py-1">
+        <i class="fa-solid fa-phone me-1 text-color1"></i> +91-7991834292
+      </div>
+      <div class="col-sm-3 py-1">
+        <i class="fa-solid fa-envelope me-1 text-color1"></i> Vaibhavsingh0452@gmail.com
+      </div>
+      <div class="col-sm-3 py-1">
+        <i class="fa-solid fa-award me-1 text-color1"></i> An ISO Certified Restaurant
+      </div>
+      <div class="col-sm-3 py-1">
+        <a href="/user/contact/" class="badge bg-color1 text-dark rounded-pill text-decoration-none me-1 px-3 py-2">Contact Us</a>
+        <a href="/admin/" class="badge bg-color1 text-dark rounded-pill text-decoration-none px-3 py-2">Login</a>
+      </div>
+    </div>
+
+    <!-- Start Navigation Header -->
+    <div class="row text-center shadow-sm bg-light sticky-top align-items-center py-2 mx-0">
+      <div class="col-sm-3 fs-2 fw-bold">
+        GYFood <span class="text-color1">Fusion <i class="fa-solid fa-utensils ms-1"></i></span>
+      </div>
+      <div class="col-sm-6">
+        <nav class="navbar navbar-expand-lg bg-transparent" id="menu">
+          <div class="container-fluid justify-content-center">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/user/index/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/user/about/">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="/user/menu/">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="/user/booking/">Book Table</a></li>
+                <li class="nav-item"><a class="nav-link" href="/user/offers/">Offers</a></li> 
+                <li class="nav-item"><a class="nav-link" href="/user/gallery/">Gallery</a></li> 
+                <li class="nav-item"><a class="nav-link" href="/user/contact/">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="/user/team/">Our Chefs</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="col-sm-3 social py-2">
+        <a href="https://www.facebook.com/share/1JSAJXjgUp/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/vaibhavsingh.1424/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <!-- End Header -->
+
+    <!-- Services -->
+    <div class="row services py-5 mx-0">
+      <div class="col-sm-10 mx-auto">
+        <div class="row g-4">
+          <div class="col-sm-3">
+            <div class="bg-light shadow-sm p-4 rounded-3 h-100 card-custom">
+              <i class="fa-solid fa-utensils mb-3"></i>
+              <p class="mb-0">
+                Welcome to Food Fusion Restaurant, where flavors from around the world come together to create an unforgettable dining experience. We serve a unique blend of traditional and modern cuisines crafted by experienced chefs.
+              </p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="bg-light shadow-sm p-4 rounded-3 h-100 card-custom">
+              <i class="fa-solid fa-bowl-food mb-3"></i>
+              <p class="mb-0">
+                At Food Fusion, every dish is prepared with passion and creativity. Our menu features Indian, Chinese, Italian, Continental, and Fusion specialties to satisfy every palate.
+              </p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="bg-light shadow-sm p-4 rounded-3 h-100 card-custom">
+              <i class="fa-solid fa-heart mb-3"></i>
+              <p class="mb-0">
+                We provide exceptional quality, outstanding customer service, and a warm atmosphere. Perfect for family dinners, dates, and celebrations.
+              </p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="bg-light shadow-sm p-4 rounded-3 h-100 card-custom">
+              <i class="fa-solid fa-bullseye mb-3"></i>
+              <p class="mb-0">
+                Our mission is to combine authentic flavors with innovative cooking techniques while delivering excellent hospitality and unforgettable dining moments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Services -->
+
+    <!-- Heading: About Us -->
+    <div class="row heading py-4 mx-0">
+      <div class="col-sm-6 mx-auto text-light fs-2 text-center">
+        <b style="color:white">About</b> <b class="text-color1">Us</b>
+      </div>
+    </div>
+
+    <!-- Intro Section -->
+    <div class="row py-5 bg-color2 mx-0 align-items-center">
+      <div class="col-sm-10 mx-auto">
+        <div class="row g-4 align-items-center">
+          <div class="col-sm-5 text-center">
+            <div class="img-hover-zoom shadow-lg">
+              <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-3" alt="Restaurant Interior">
+            </div>
+          </div>
+          <div class="col-sm-7" style="text-align: justify;">
+            <p class="fs-3 fw-bold mb-1">About <b class="text-color1">Our Restaurant</b></p>
+            <hr class="w-25 border-3 border-warning opacity-100 mt-0 mb-3"/>
+            <p>
+              Welcome to Food Fusion Restaurant, where every meal is crafted to bring people together through unforgettable flavors and exceptional hospitality. We believe that great food is more than just nourishment—it's an experience that creates memories, celebrates culture, and connects people.
+            </p>
+            <p>
+              At Food Fusion, we carefully select premium-quality ingredients to ensure every dish is prepared with the highest standards of freshness and flavor. From savory starters to handcrafted main courses and artisanal desserts, our menu offers something delightful for every taste.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Heading: Our Menu -->
+    <div class="row heading py-4 mx-0">
+      <div class="col-sm-6 mx-auto text-light fs-2 text-center">
+        <b style="color:white">Our</b> <b class="text-color1">Menu</b>
+      </div>
+    </div>
+
+    <!-- Menu Section -->
+    <div class="row py-5 mx-0">
+      <div class="col-sm-10 mx-auto">
+        <div class="row g-4">
+          <div class="col-sm-3">
+            <ul class="list-group shadow-sm">
+              <li class="list-group-item bg-color1 text-dark fw-bold" aria-current="true">
+                <i class="fa-solid fa-utensils me-2"></i> Our Categories
+              </li>
+              {% if a %}
+              <li class="list-group-item d-flex align-items-center">
+                <img src="/{{a.category_picture}}" height="40" class="me-2 rounded" alt="Category"/>
+                <a class="text-decoration-none text-dark fw-semibold" href="/user/menu?msg={{a.id}}">{{a.category_name}}</a>
+              </li>
+              {% else %}
+              <li class="list-group-item"><a href="#" class="text-decoration-none text-dark fw-semibold">North Indian Fusion</a></li>
+              <li class="list-group-item"><a href="#" class="text-decoration-none text-dark fw-semibold">Chinese & Italian</a></li>
+              <li class="list-group-item"><a href="#" class="text-decoration-none text-dark fw-semibold">Sizzlers & Starters</a></li>
+              <li class="list-group-item"><a href="#" class="text-decoration-none text-dark fw-semibold">Desserts & Drinks</a></li>
+              {% endif %}
+              <li class="list-group-item bg-light">
+                <a href="/user/menu/" class="text-decoration-none text-dark fw-bold">View All Products &rarr;</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-9">
+            <div class="fs-3 fw-bold mb-1"><b style="color: black">Top Featured</b> <b class="text-color1">Items</b></div>
+            <hr class="w-25 border-3 border-warning opacity-100 mt-0 mb-4"/>
+            <div class="row g-4">
+              <!-- Static/Dynamic Food Item 1 -->
+              <div class="col-sm-4">
+                <div class="card card-custom h-100 shadow-sm position-relative">
+                  <span class="badge bg-danger position-absolute top-0 end-0 m-2 px-2 py-1">Discounted</span>
+                  <div class="img-hover-zoom">
+                    <img src="{% if x.picture %}/{{x.picture}}{% else %}https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80{% endif %}" class="card-img-top" alt="Food Item" style="height:200px; object-fit:cover;">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title fs-5 fw-bold mb-1">{% if x.name %}{{x.name}}{% else %}Gourmet Veggie Fusion Bowl{% endif %}</p>
+                    <p class="card-text text-muted small">
+                      {% if x.description %}{{x.description}}{% else %}Fresh garden greens, grilled paneer, exotic herbs, and special spicy fusion dip.{% endif %}
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                      <span class="badge bg-color1 text-dark fs-6 px-2 py-1"><i class="fa-solid fa-indian-rupee-sign"></i> {% if x.price %}{{x.price}}{% else %}299{% endif %}/-</span>
+                      <a href="/user/booking/" class="btn btn-sm btn-outline-dark fw-semibold">Order Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Static Food Item 2 -->
+              <div class="col-sm-4">
+                <div class="card card-custom h-100 shadow-sm position-relative">
+                  <span class="badge bg-success position-absolute top-0 end-0 m-2 px-2 py-1">Bestseller</span>
+                  <div class="img-hover-zoom">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Pizza" style="height:200px; object-fit:cover;">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title fs-5 fw-bold mb-1">Cheesy Italian Fusion Pizza</p>
+                    <p class="card-text text-muted small">Hand-tossed crust with aromatic herbs, mozzarella, and spicy Indian toppings.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                      <span class="badge bg-color1 text-dark fs-6 px-2 py-1"><i class="fa-solid fa-indian-rupee-sign"></i> 349/-</span>
+                      <a href="/user/booking/" class="btn btn-sm btn-outline-dark fw-semibold">Order Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Static Food Item 3 -->
+              <div class="col-sm-4">
+                <div class="card card-custom h-100 shadow-sm position-relative">
+                  <div class="img-hover-zoom">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Burger" style="height:200px; object-fit:cover;">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title fs-5 fw-bold mb-1">Special Fusion Supreme Burger</p>
+                    <p class="card-text text-muted small">Double crisp patty, melted cheddar, caramelised onions, and signature house sauce.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                      <span class="badge bg-color1 text-dark fs-6 px-2 py-1"><i class="fa-solid fa-indian-rupee-sign"></i> 199/-</span>
+                      <a href="/user/booking/" class="btn btn-sm btn-outline-dark fw-semibold">Order Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Heading: Our Team -->
+    <div class="row heading py-4 mx-0">
+      <div class="col-sm-6 mx-auto text-light fs-2 text-center">
+        <b style="color:white">Our Master</b> <b class="text-color1">Chefs</b>
+      </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="row py-5 mx-0">
+      <div class="col-sm-10 mx-auto">
+        <div class="row g-4">
+          <!-- Chef Card 1 -->
+          <div class="col-sm-3 social">
+            <div class="bg-white shadow-sm p-3 rounded-3 text-center card-custom h-100">
+              <div class="img-hover-zoom mb-3">
+                <img src="{% if x.picture %}/{{x.picture}}{% else %}https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=500&q=80{% endif %}" class="img-fluid rounded-3" style="height:220px; width:100%; object-fit:cover;" alt="Executive Chef"/>
+              </div>
+              <b class="fs-5 d-block text-dark mb-1">{% if x.name %}{{x.name}}{% else %}Chef Rajesh Sharma{% endif %}</b>
+              <p class="text-muted small mb-2">{% if x.about_chef %}{{x.about_chef}}{% else %}Head Executive Chef with 12+ years specializing in modern Indian-Italian fusion cuisine.{% endif %}</p>
+              <div class="pt-2">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chef Card 2 -->
+          <div class="col-sm-3 social">
+            <div class="bg-white shadow-sm p-3 rounded-3 text-center card-custom h-100">
+              <div class="img-hover-zoom mb-3">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded-3" style="height:220px; width:100%; object-fit:cover;" alt="Chef"/>
+              </div>
+              <b class="fs-5 d-block text-dark mb-1">Chef Priya Verma</b>
+              <p class="text-muted small mb-2">Pastry Specialist crafting artisanal desserts, fusion sweets, and freshly baked delights.</p>
+              <div class="pt-2">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chef Card 3 -->
+          <div class="col-sm-3 social">
+            <div class="bg-white shadow-sm p-3 rounded-3 text-center card-custom h-100">
+              <div class="img-hover-zoom mb-3">
+                <img src="https://images.unsplash.com/photo-1607631568010-a87245c0daf8?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded-3" style="height:220px; width:100%; object-fit:cover;" alt="Chef"/>
+              </div>
+              <b class="fs-5 d-block text-dark mb-1">Chef Marco Rossi</b>
+              <p class="text-muted small mb-2">Continental & Italian specialist bringing authentic Mediterranean flavors to your table.</p>
+              <div class="pt-2">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chef Card 4 -->
+          <div class="col-sm-3 social">
+            <div class="bg-white shadow-sm p-3 rounded-3 text-center card-custom h-100">
+              <div class="img-hover-zoom mb-3">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded-3" style="height:220px; width:100%; object-fit:cover;" alt="Sous Chef"/>
+              </div>
+              <b class="fs-5 d-block text-dark mb-1">Chef Vikram Singh</b>
+              <p class="text-muted small mb-2">Sous Chef focusing on authentic Pan-Asian appetizers and sizzlers.</p>
+              <div class="pt-2">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Heading: Image Gallery -->
+    <div class="row heading py-4 mx-0">
+      <div class="col-sm-6 mx-auto text-light fs-2 text-center">
+        <b style="color:white">Image</b> <b class="text-color1">Gallery</b>
+      </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="row py-5 bg-color2 mx-0">
+      <div class="col-sm-10 mx-auto">
+        <div class="row g-4">
+          <div class="col-sm-3">
+            <div class="bg-light shadow-sm p-2 rounded-3 card-custom">
+              <div class="img-hover-zoom">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded-2" style="height:180px; width:100%; object-fit:cover;" alt="Delicious Meal"/>
+              </div>
+              <b class="text-center p-2 d-block">Gourmet Starters</b>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="bg-light shadow-sm p-2 rounded-3 card-custom">
+              <div class="img-hover-zoom">
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded-2" style="height:180px; width:100%; object-fit:cover;" alt="Juicy Burger"/>
+              </div>
+              <b class="text-center p-2 d-block">Craft Burgers</b>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="bg-light shadow-sm p-2 rounded-3 card-custom">
+              <div class="img-hover-zoom">
+                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded-2" style="height:180px; width:100%; object-fit:cover;" alt="Refreshing Cocktails"/>
+              </div>
+              <b class="text-center p-2 d-block">Exotic Drinks</b>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="bg-light shadow-sm p-2 rounded-3 card-custom">
+              <div class="img-hover-zoom">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded-2" style="height:180px; width:100%; object-fit:cover;" alt="Ambiance"/>
+              </div>
+              <b class="text-center p-2 d-block">Fine Dining Ambiance</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Heading: Book Table -->
+    <div class="row heading py-4 mx-0">
+      <div class="col-sm-6 mx-auto text-light fs-2 text-center">
+        <b style="color:white">Book A</b> <b class="text-color1">Table Now</b>
+      </div>
+    </div>
+
+    <!-- Table Booking Section -->
+    <div class="row bg-color1 py-5 mx-0">
+      <div class="col-sm-10 mx-auto">
+        <div class="row mb-4">
+          <div class="col-sm-12">
+            <div class="fs-3 fw-bold">Why Choose <span class="text-light">GYFood Fusion</span></div>
+            <hr class="w-25 border-2 border-dark opacity-100 mt-0 mb-2"/>
+            <p class="mb-0">Your Trusted Partner for Fast, Fresh, and Hassle-Free Dining Experiences.</p>
+          </div>
+        </div>
+        <div class="row g-4 align-items-center">
+          <div class="col-sm-6">
+            <!-- Booking Form -->
+            <form method="post" class="bg-white p-4 rounded-3 shadow-lg">
+              <div class="mb-2">
+                <label class="form-label fw-semibold mb-1">Pricing Info</label>
+                <input type="text" value="Per Person Price : ₹25/-" readonly class="form-control bg-light"/>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <input type="number" onblur="demo()" id="t" placeholder="No. of People" name="nop" required class="form-control"/>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <input type="number" id="t1" placeholder="Total Amount (₹)" readonly name="amount" required class="form-control bg-light"/>
+                </div>
+              </div>
+              <input type="text" placeholder="Your Name" name="name" required class="form-control"/>
+              <input type="number" name="mobile" placeholder="Mobile No" required class="form-control"/>
+              <input type="email" name="email" placeholder="Email Address" required class="form-control"/>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <input type="date" name="date" required class="form-control"/>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <input type="time" name="time" required class="form-control"/>
+                </div>
+              </div>
+              <textarea placeholder="Special Request / Message" name="msg" class="form-control txta mb-2"></textarea>
+              <textarea placeholder="Your Address" name="address" required class="form-control txta mb-3"></textarea>
+              <input type="submit" value="Book Table Now" class="btn1 w-100 text-center"/>
+            </form>
+          </div>
+          <div class="col-sm-6">
+            <div class="bg-color2 p-3 shadow-sm rounded-3 mb-3">
+              <b>⚡ Lightning-Fast Reservation:</b> Get your table reserved instantly with real-time confirmation.
+            </div>
+            <div class="bg-color2 p-3 shadow-sm rounded-3 mb-3">
+              <b>🍽️ Wide Menu Selection:</b> Explore local favorites, Pan-Asian, Italian, and specialty desserts.
+            </div>
+            <div class="bg-color2 p-3 shadow-sm rounded-3 mb-3">
+              <b>⭐ Quality You Can Trust:</b> We prioritize fresh ingredients, hygiene, and outstanding hospitality.
+            </div>
+            <div class="bg-color2 p-3 shadow-sm rounded-3 mb-3">
+              <b>🎁 Exclusive Offers & Rewards:</b> Special discounts on birthdays, family dinners, and group bookings.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="row py-5 bg-dark text-light mx-0">
+      <div class="col-sm-10 mx-auto">
+        <div class="row align-items-center text-center text-md-start">
+          <div class="col-sm-8 mb-3 mb-md-0">
+            <b class="fs-3 text-color1 d-block mb-2">Ready for a Memorable Dining Experience?</b>
+            <p class="mb-0 text-light opacity-75">Experience delicious fusion flavors, a warm atmosphere, and unforgettable moments. Book your table now!</p>
+          </div>
+          <div class="col-sm-2 col-6">
+            <a href="tel:+917991834292" class="btn1 text-center text-dark w-100"><i class="fa-solid fa-phone me-1"></i> Call Now</a>
+          </div>
+          <div class="col-sm-2 col-6">
+            <a href="/user/booking/" class="btn1 text-center text-dark w-100"><i class="fa-solid fa-chair me-1"></i> Book Table</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Heading: About Me -->
+    <div class="row heading py-4 mx-0">
+      <div class="col-sm-6 mx-auto text-light fs-2 text-center">
+        <b style="color:white">Developer</b> <b class="text-color1">Profile</b>
+      </div>
+    </div>
+
+    <!-- Developer Section -->
+    <div class="row social py-5 mx-0">
+      <div class="col-sm-10 mx-auto shadow-lg p-4 rounded-3 bg-white">
+        <div class="row align-items-center">
+          <div class="col-sm-4 text-center mb-3 mb-md-0">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded-3 shadow-sm" alt="Developer Profile" style="max-height: 280px; object-fit: cover;"/>
+          </div>
+          <div class="col-sm-8">
+            <p class="fs-2 fw-bold mb-1">Er. Vaibhav Singh</p>
+            <p class="text-color1 fw-semibold fs-5 mb-2">Software Engineer (5 Years Experience)</p>
+            <hr class="w-25 border-2 border-warning opacity-100 mt-0 mb-3"/>
+            <b class="fs-6 d-block mb-2">Skills & Technologies:</b>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="badge bg-color1 text-dark fs-6 px-3 py-2">HTML5</span>
+              <span class="badge bg-color1 text-dark fs-6 px-3 py-2">CSS3</span>
+              <span class="badge bg-color1 text-dark fs-6 px-3 py-2">Bootstrap 5</span>
+              <span class="badge bg-color1 text-dark fs-6 px-3 py-2">JavaScript</span>
+              <span class="badge bg-color1 text-dark fs-6 px-3 py-2">Python</span>
+              <span class="badge bg-color1 text-dark fs-6 px-3 py-2">Django</span>
+              <span class="badge bg-color1 text-dark fs-6 px-3 py-2">Database Management</span>
+            </div>
+            <hr class="my-3"/>
+            <div>
+              <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.youtube.com/techpilelko" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+              <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+              <a href="https://www.instagram.com/vaibhavsingh.1424/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Heading: Contact Us -->
+    <div class="row heading py-4 mx-0">
+      <div class="col-sm-6 mx-auto text-light fs-2 text-center">
+        <b style="color:white">Contact</b> <b class="text-color1">Us</b>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="row contact py-5 mx-0">
+      <div class="col-sm-10 mx-auto">
+        <div class="row g-4 mb-4">
+          <div class="col-sm-4">
+            <div class="shadow-sm p-3 bg-white rounded-3 d-flex align-items-center">
+              <i class="fa-solid fa-phone me-3 fs-4"></i>
+              <div>
+                <b class="d-block">Phone Number</b>
+                <span>+91-7991834292</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="shadow-sm p-3 bg-white rounded-3 d-flex align-items-center">
+              <i class="fa-solid fa-envelope me-3 fs-4"></i>
+              <div>
+                <b class="d-block">Email Address</b>
+                <span>vaibhavsingh0452@gmail.com</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="shadow-sm p-3 bg-white rounded-3 d-flex align-items-center">
+              <i class="fa-solid fa-location-dot me-3 fs-4"></i>
+              <div>
+                <b class="d-block">Restaurant Address</b>
+                <span>Line Bazar, Jaunpur, 222002</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-sm-5">
+            <form method="post" class="bg-white p-4 rounded-3 shadow-sm">
+              <h5 class="fw-bold mb-3">Send Us A Message</h5>
+              <input type="text" placeholder="Your Name" name="name" required class="form-control"/>
+              <input type="number" name="mobile" placeholder="Mobile No" required class="form-control"/>
+              <input type="email" name="email" placeholder="Email Address" required class="form-control"/>
+              <textarea placeholder="Your Message" name="msg" required class="form-control txta mb-3"></textarea>
+              <input type="submit" value="Submit Message" class="btn1 w-100 text-center"/>
+            </form>
+          </div>
+          <div class="col-sm-7">
+            <div class="rounded-3 overflow-hidden shadow-sm h-100">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14389.281140925232!2d82.67812050000001!3d25.7599026!2m3!1f0d0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39903730e6ef834f%3A0xb363414902d24263!2sLine%20Bazar%2C%20Jaunpur%2C%20Uttar%20Pradesh%20222002!5e0!3m2!1sen!2sin!4v1716382900000!5m2!1sen!2sin" class="w-100 h-100" style="min-height:320px; border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer 1 -->
+    <div class="row py-5 text-light bg-dark mx-0">
+      <div class="col-sm-10 mx-auto">
+        <div class="row g-4">
+          <div class="col-sm-3">
+            <b class="fs-4 text-color1">GYFood Fusion</b>
+            <hr class="w-50 border-warning opacity-100 mt-1 mb-3"/>
+            <p class="small text-muted mb-3">Serving fresh, organic, and delicious fusion meals prepared daily by expert chefs.</p>
+            <p class="small mb-1"><i class="fa-solid fa-location-dot me-2 text-color1"></i> Line Bazar, Jaunpur, UP</p>
+            <p class="small mb-1"><i class="fa-solid fa-phone me-2 text-color1"></i> +91-7991834292</p>
+            <p class="small mb-0"><i class="fa-solid fa-envelope me-2 text-color1"></i> info@deliciousbites.com</p>
+          </div>
+          <div class="col-sm-3">
+            <b class="fs-5 text-color1">Quick Links</b>
+            <hr class="w-25 border-warning opacity-100 mt-1 mb-3"/>
+            <ul class="list-unstyled">
+              <li class="py-1"><a href="/user/index/" class="text-decoration-none text-light opacity-75">&rarr; Home</a></li>
+              <li class="py-1"><a href="/user/about/" class="text-decoration-none text-light opacity-75">&rarr; About Us</a></li>
+              <li class="py-1"><a href="/user/menu/" class="text-decoration-none text-light opacity-75">&rarr; Menu</a></li>
+              <li class="py-1"><a href="/user/gallery/" class="text-decoration-none text-light opacity-75">&rarr; Gallery</a></li>
+              <li class="py-1"><a href="/user/contact/" class="text-decoration-none text-light opacity-75">&rarr; Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <b class="fs-5 text-color1">Our Services</b>
+            <hr class="w-25 border-warning opacity-100 mt-1 mb-3"/>
+            <ul class="list-unstyled">
+              <li class="py-1 text-light opacity-75">&bull; Fine Dine-In</li>
+              <li class="py-1 text-light opacity-75">&bull; Online Food Ordering</li>
+              <li class="py-1 text-light opacity-75">&bull; Express Home Delivery</li>
+              <li class="py-1 text-light opacity-75">&bull; Table Reservation</li>
+              <li class="py-1 text-light opacity-75">&bull; Private Party Catering</li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <b class="fs-5 text-color1">Opening Hours</b>
+            <hr class="w-25 border-warning opacity-100 mt-1 mb-3"/>
+            <p class="small mb-2"><b>Mon - Fri:</b> 10:00 AM - 10:00 PM</p>
+            <p class="small mb-3"><b>Sat - Sun:</b> 09:00 AM - 11:00 PM</p>
+            <b class="fs-6 text-color1 d-block mb-2">Follow Us:</b>
+            <div class="social">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="row bg-black text-center py-3 text-light mx-0 border-top border-secondary">
+      <div class="col-sm-6 text-md-start px-5">
+        Copyright &copy; 2026 <a href="https://www.techpile.in" class="text-color1 text-decoration-none fw-bold" target="_blank">GYFood Fusion Restaurant</a>. All Rights Reserved.
+      </div>
+      <div class="col-sm-6 text-md-end px-5">
+        Designed & Developed By: <a href="/user/developer/" class="text-color1 text-decoration-none fw-bold">Er. Vaibhav Singh</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+  <script>
+    function demo() {
+      var nop = document.getElementById("t").value;
+      if (nop && nop > 0) {
+        var amount = parseInt(nop) * 25;
+        document.getElementById("t1").value = amount;
+      } else {
+        document.getElementById("t1").value = 0;
+      }
+    }
+  </script>
+</body>
+</html>
